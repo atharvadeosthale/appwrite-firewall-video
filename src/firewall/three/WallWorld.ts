@@ -411,7 +411,8 @@ export class WallWorld {
       if (!offset) {
         for (let i = 0; i < 4; i++) units.push({ z: -1.5 + i, w: 1 - gap, half: false });
       } else {
-        units.push({ z: -1.75, w: 0.5 - gap, half: true });
+        // Full brick overhanging the far end so it reads as toothed, not sawn flush.
+        units.push({ z: -2, w: 1 - gap, half: false });
         for (let i = 0; i < 3; i++) units.push({ z: -1 + i, w: 1 - gap, half: false });
         units.push({ z: 1.75, w: 0.5 - gap, half: true });
       }

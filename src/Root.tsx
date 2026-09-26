@@ -6,6 +6,7 @@ import { S1Hook, S1_DURATION } from "./firewall/scenes/S1Hook";
 import { S2Reveal, S2_DURATION } from "./firewall/scenes/S2Reveal";
 import { S3Rule, S3_DURATION } from "./firewall/scenes/S3Rule";
 import { S4Actions, S4_DURATION } from "./firewall/scenes/S4Actions";
+import { S4bCoverage, S4B_DURATION } from "./firewall/scenes/S4bCoverage";
 import { S5UseCases, S5_DURATION } from "./firewall/scenes/S5UseCases";
 import { S6Overview, S6_DURATION } from "./firewall/scenes/S6Overview";
 import { S7Finale, S7_DURATION } from "./firewall/scenes/S7Finale";
@@ -50,6 +51,14 @@ export const RemotionRoot: React.FC = () => {
           id="S4-Actions"
           component={S4Actions}
           durationInFrames={S4_DURATION}
+          fps={60}
+          width={1920}
+          height={1080}
+        />
+        <Composition
+          id="S4b-Coverage"
+          component={S4bCoverage}
+          durationInFrames={S4B_DURATION}
           fps={60}
           width={1920}
           height={1080}
