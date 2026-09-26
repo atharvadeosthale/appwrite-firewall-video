@@ -221,7 +221,7 @@ export const S5UseCases: React.FC = () => {
         }}
       />
       <div style={{ position: "absolute", left: 124, top: 330, width: 640, opacity: 1 - flat }}>
-        <Eyebrow text="Presets" start={10} size={22} color="#b4b4bd" />
+        <Eyebrow text="Presets" start={10} />
         <div style={{ marginTop: 26, fontSize: 96, letterSpacing: "-0.045em", lineHeight: 1.0, color: C.fg }}>
           <Words
             text="Stop real attacks"

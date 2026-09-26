@@ -8,6 +8,7 @@ import { S1Hook, S1_DURATION } from "./scenes/S1Hook";
 import { S2Reveal, S2_DURATION } from "./scenes/S2Reveal";
 import { S3Rule, S3_DURATION } from "./scenes/S3Rule";
 import { S4Actions, S4_DURATION } from "./scenes/S4Actions";
+import { S4bCoverage, S4B_DURATION } from "./scenes/S4bCoverage";
 import { S5UseCases, S5_DURATION } from "./scenes/S5UseCases";
 import { S6Overview, S6_DURATION } from "./scenes/S6Overview";
 import { S7Finale, S7_DURATION } from "./scenes/S7Finale";
@@ -18,12 +19,13 @@ const s2 = { from: s1.from + s1.dur - 24, dur: S2_DURATION, fade: 24 };
 const s3 = { from: s2.from + s2.dur - 24, dur: S3_DURATION, fade: 24 };
 // S4 continues S3's action-menu handoff, so it starts exactly where S3 ends.
 const s4 = { from: s3.from + s3.dur, dur: S4_DURATION, fade: 0 };
-const s5 = { from: s4.from + s4.dur - 24, dur: S5_DURATION, fade: 24 };
+const s4b = { from: s4.from + s4.dur - 24, dur: S4B_DURATION, fade: 24 };
+const s5 = { from: s4b.from + s4b.dur - 24, dur: S5_DURATION, fade: 24 };
 const s6 = { from: s5.from + s5.dur - 24, dur: S6_DURATION, fade: 24 };
 const s7 = { from: s6.from + s6.dur, dur: S7_DURATION, fade: 0 };
 
 export const TRAILER_DURATION = s7.from + s7.dur;
-export const SCENES = { s1, s2, s3, s4, s5, s6, s7 };
+export const SCENES = { s1, s2, s3, s4, s4b, s5, s6, s7 };
 
 const FadeIn: React.FC<{ frames: number; children: React.ReactNode }> = ({ frames, children }) => {
   const frame = useCurrentFrame();
@@ -66,6 +68,7 @@ export const FirewallTrailer: React.FC = () => {
       {scene("Reveal", s2, <S2Reveal />)}
       {scene("Rule", s3, <S3Rule />)}
       {scene("Actions", s4, <S4Actions />)}
+      {scene("Coverage", s4b, <S4bCoverage />)}
       {scene("Use cases", s5, <S5UseCases />)}
       {scene("Overview", s6, <S6Overview />)}
       {scene("Finale", s7, <S7Finale />)}

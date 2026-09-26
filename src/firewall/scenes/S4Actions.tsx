@@ -355,10 +355,10 @@ const RateFx: React.FC<{ a: number }> = ({ a }) => {
       })}
       {over ? (
         <g opacity={prog(a, shots[LIMIT] + 16, 10) * (1 - prog(a, 128, 14))}>
-          <text x={WALL.x + WALL.w + 34} y={CY - 58} fill={C.rateLimitText} fontFamily={MONO} fontSize={40} fontWeight={600}>
+          <text x={(LINE_B.x0 + LINE_B.x1) / 2} y={CY - 58} textAnchor="middle" fill={C.rateLimitText} fontFamily={MONO} fontSize={40} fontWeight={600}>
             429
           </text>
-          <text x={WALL.x + WALL.w + 36} y={CY - 26} fill={rgba(C.rateLimitText, 0.7)} fontFamily={INTER} fontSize={18}>
+          <text x={(LINE_B.x0 + LINE_B.x1) / 2} y={CY - 26} textAnchor="middle" fill={rgba(C.rateLimitText, 0.7)} fontFamily={INTER} fontSize={15}>
             Retry-After: 42s
           </text>
         </g>

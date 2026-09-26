@@ -76,7 +76,7 @@ export const Eyebrow: React.FC<{
   color?: string;
   exit?: number;
   style?: React.CSSProperties;
-}> = ({ text, start, size = 20, color = C.muted, exit, style }) => {
+}> = ({ text, start, size = 32, color = "#dcdce2", exit, style }) => {
   const frame = useCurrentFrame();
   const out = exit === undefined ? 0 : prog(frame, exit, 16, EASE.in);
   const n = Math.max(0, Math.min(text.length, Math.floor((frame - start) * 1.2)));
@@ -87,10 +87,11 @@ export const Eyebrow: React.FC<{
       style={{
         fontFamily: MONO,
         fontSize: size,
-        fontWeight: 500,
-        letterSpacing: "0.32em",
+        fontWeight: 600,
+        letterSpacing: "0.18em",
         textTransform: "uppercase",
         color,
+        textShadow: "0 2px 14px rgba(0,0,0,0.75), 0 0 2px rgba(0,0,0,0.9)",
         whiteSpace: "pre",
         opacity: frame >= start ? 1 - out : 0,
         filter: out > 0 ? `blur(${out * 6}px)` : undefined,

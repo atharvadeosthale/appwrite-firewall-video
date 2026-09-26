@@ -76,7 +76,7 @@ export const S7Finale: React.FC = () => {
         }}
       />
       <div style={{ position: "absolute", left: 124, top: 380 }}>
-        <Eyebrow text="Attack mode" start={CHALLENGE_AT + 4} size={22} color={C.challengeText} exit={192} />
+        <Eyebrow text="Attack mode" start={CHALLENGE_AT + 4} color="#c4b5fd" exit={192} />
         <div style={{ marginTop: 24, fontSize: 128, letterSpacing: "-0.05em", lineHeight: 1.0, color: C.fg }}>
           <Words text="One click." start={CHALLENGE_AT + 12} stagger={6} exit={194} />
           <Words
@@ -109,7 +109,7 @@ export const S7Finale: React.FC = () => {
               textShadow: `0 0 50px ${rgba(C.pink, 0.22 * prog(frame, OUTRO_AT + 40, 60))}`,
             }}
           >
-            <Eyebrow text="Available now on Appwrite Cloud" start={OUTRO_AT + 12} size={22} color="#c3c3cc" />
+            <Eyebrow text="Available now on Appwrite Cloud" start={OUTRO_AT + 12} />
             <div style={{ marginTop: 30, fontSize: 168, letterSpacing: "-0.05em", lineHeight: 1, color: C.fg }}>
               <Words
                 text="Appwrite Firewall"
