@@ -12,3 +12,4 @@ Config.setRspack(true);
 Config.setVideoImageFormat("jpeg");
 Config.setOverwriteOutput(true);
 Config.overrideBundlerConfig(enableTailwind);
+Config.setChromiumOpenGlRenderer("angle");
